@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+<style>
+  .horo{
+    background-color: black;
+    background-image:url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-12752.png);
+    background-position: center;
+    background-size: auto;
+    margin-bottom: 80px;
+    padding-top: 0px;
+    margin-top: 0px;
+
+  }
+</style>
+<body class="horo">
+<div>
+  <div class="container-fluid text-center" style="color:white;">
+    <div class="jumbotron" style="background-color:transparent">
+      {% if user.is_authenticated %}
+      <div class="card" style="border-color:transparent;background-color:black;opacity:0.8;color:white">
+    <div class="card-body">
+      <h5> You're logged in. Go to your profile.</h5><br>
+      <h6 class="card-subtitle mb-2 text-muted">Use the arrow to navigate through the app.</h6>
+    </div>
+  </div>
+      {% else %}
+      <div class="card" style="width: 20rem;background-color:black;opacity:0.85;">
+    <div class="card-body">
+      <h4 class="card-title">You can Login here</h4>
+      <h6 class="card-subtitle mb-2 text-muted">Enter your details</h6>
+      <form  method="post">
+        {% csrf_token %}
+        <div class="container">
+
+  <label for="id_username">Username</label>
+  <input id="id_username" name="username"
+                                       type="text" class="form-control"><br>
+
+
+        <label for="id_password">Password</label>
+                  <input id="id_password" name="password"
+                                       type="password" class="form-control"><br>
+                    {% if form.errors %}
+                        <p class=" label label-danger">
+                            Your username and password didn't match.
+                            Please try again.
+                        </p>
+                    {% endif %}
+
+                    <!-- <input type="submit" value="Login"
+                           class="btn btn-primary pull-right" />
+                    <input type="hidden" name="next" value="{{ next }}" /> -->
+                    <br>
+                    <button type="submit" class="btn btn-outline-success">Login</button>
+      </form>
+
+    </div><br>
+    <p>Not a User? <span> <a href="/accounts/register" style="font-style:italic;color:yellow">Sign Up</a> </span> </p>
+    <hr>
+    {% endif %}
+  </div>
+
+
+            </div>
+        </div>
+
+      </div>
+    </div>
+</body>
+
+    {% endblock %}

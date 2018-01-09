@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+  .horo{
+    background-color: black;
+    background-image:url(http://dotawallpaper.org/wp-content/uploads/2016/05/Storm%20Spirit%20Minimal%20Art.jpg);
+    background-position: center;
+    background-size: auto;
+    margin-bottom: 80px;
+    padding-top: 0px;
+    margin-top: 0px;
+
+  }
+</style>
+<body class="horo">
+<div class="container text-center" style="margin-top:10%">
+  <div class="jumbotron" style="background-color:black;opacity:0.8;">
+    <div class="card" style="border-color:transparent;background-color:transparent">
+  <div class="card-body" style="background-color:transparent;color:white">
+    <h5> You've logged out!</h5>
+  </div>
+</div>
+    <a class="btn btn-primary" href="/accounts/login" role="button">Log In</a><br><br>
+    <hr>
+  </div>
+</div>
+</body>
+
+{% endblock %}

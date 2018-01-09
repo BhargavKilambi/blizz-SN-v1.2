@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+  .horo{
+    background-color: black;
+    background-image:url(https://s-media-cache-ak0.pinimg.com/originals/f2/d6/bf/f2d6bf79903350b0a1e2ca9a92b0c5d5.jpg);
+    background-position: center;
+    background-size: auto;
+    margin-bottom: 80px;
+    padding-top: 0px;
+    margin-top: 0px;
+
+  }
+</style>
+<body class="horo">
+<div class="container text-center" style="margin-top:9%">
+  <div class="card" style="background-color:black;opacity:0.8;color:white">
+  <div class="card-body">
+  <p>Blizz is an Open-Source Web Application for blogging and posting media.</p>
+    <hr>
+  <a href="https://github.com/BhargavKilambi" style="margin-right:10px;"><i class="ion-social-github" style="font-size:36px;" href="#"></i></a>
+    <a href="https://www.instagram.com/bhargav_ram3/" style="margin-right:10px;"><i class="ion-social-instagram-outline" style="font-size:36px;"></i></a>
+    <hr style="border-color:white">
+    Constructive feedback and suggestions are always welcome.
+    <form method="post">
+      <br>
+        {% csrf_token %}<div class="container text-center">
+          {{feed.text}}<br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form><br>
+    <hr style="border-color:white;opacity:0.5">
+    <p>&copy;Bhargav Ram. Blizz v1.2.0</p>
+  </div>
+</div>
+</div>
+
+</body>
+{% endblock %}

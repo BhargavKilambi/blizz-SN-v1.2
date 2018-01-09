@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+    {% block body %}
+    <style>
+      .horo{
+        background-color: black;
+        background-image:url(https://images2.alphacoders.com/100/thumb-1920-100452.jpg);
+        background-position: center;
+        background-size: auto;
+        margin-bottom: 80px;
+        padding-top: 0px;
+        margin-top: 0px;
+
+      }
+    </style>
+    <body class="horo">
+    <div class="container" style="color:white">
+      <div class="jumbotron" style="background-color:black;opacity:0.8">
+        <div class="container">
+          <h5>Edit your info here</h5><hr>
+          <form method="post">
+               {% csrf_token %}
+              <strong style="float:left">First Name:</strong>{{ form.first_name }}<br>
+               <strong style="float:left">Last Name:</strong>{{ form.last_name }}<br>
+               <strong style="float:left">Email :</strong>{{ form.email }}<br>
+              <hr style="border-color:white">   <h5>Edit your bio here</h5><hr>
+              <strong style="float:left">Bio:</strong>   {{ profile_form.bio}}<br>
+              <strong style="float:left">Mobile:</strong>   {{ profile_form.phone}}<br>
+
+               <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
+      </div>
+      <hr>
+      </div>
+    {% endblock %}
+  </body>
+</html>
